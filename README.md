@@ -1,4 +1,4 @@
-# Автотесты для сайта <a target="_blank" href="https://utorg.pro/">UTORG>PRO</a>
+# Автотесты для сайта <a target="_blank" href="https://utorg.pro/">UTORGPRO</a>
 ![Intelij_IDEA](img/icons/ПочтаРоссии.png)
 
 ## Реализованы следующие проверки:

@@ -48,7 +48,7 @@ ___
 * В последней сборке Jenkins
 
 Allure report (пример):
-<a target="_blank" href="https://jenkins.autotests.cloud/job/010-KseniyaAtygaeva-hw13/8/allure/">https://jenkins.autotests.cloud/job/010-KseniyaAtygaeva-hw13/8/allure/</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/">https://jenkins.autotests.cloud/job/</a>
 ![Allure](img/Allure_jenkins.png)
 ![Allure](img/Allure.png)
 

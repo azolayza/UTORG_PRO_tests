@@ -14,10 +14,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class UtorgMainPageTests extends TestBase {
 
-    String invalidValue="email.ru";
-    String invalidBankCard = "1234567890";
-    String correctValidEmail = "utorgme@mailforspam.com";
-
     @Test
     @Description("Test check Main Page have BuyBTN button)")
     @DisplayName("BuyBtcButton should be in MainPage")
@@ -66,7 +62,7 @@ public class UtorgMainPageTests extends TestBase {
             open("https://utorg.pro/");
         });
         step("Enter invalid card number in card field", () -> {
-            $(".uw-address").setValue(invalidBankCard);
+            $(".uw-address").setValue("1234567890");
         });
         step("Check Error message for card number", () -> {
             $(".uw-input-error").shouldHave(Condition.text(
@@ -86,7 +82,7 @@ public class UtorgMainPageTests extends TestBase {
             $(".variant-link").click();
         });
         step("Enter invalid email in email field", () -> {
-            $(".MuiInputBase-inputAdornedEnd").setValue(invalidValue);
+            $(".MuiInputBase-inputAdornedEnd").setValue("email.ru");
         });
         step("Click on Proceed button for enter email", () -> {
             $(".MuiButton-label").click();
@@ -108,7 +104,7 @@ public class UtorgMainPageTests extends TestBase {
             $(".variant-link").click();
         });
         step("Enter correct email on email field", () -> {
-            $(".MuiInputBase-inputAdornedEnd").setValue(correctValidEmail);
+            $(".MuiInputBase-inputAdornedEnd").setValue("utorgme@mailforspam.com");
         });
         step("Click on Proceed button for enter email", () -> {
             $(".MuiInputBase-inputAdornedEnd").pressEnter();

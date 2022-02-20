@@ -43,12 +43,12 @@ ___
 
 ---
 ## Анализ результатов
-Ссылку на отчет Allure можно найти в 
+Ссылку на отчет Allure можно найти в
 * Сообщении Telegram
 * В последней сборке Jenkins
 
 Allure report (пример):
-<a target="_blank" href="https://jenkins.autotests.cloud/job/">https://jenkins.autotests.cloud/job/</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom/2/allure/#">https://jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom/2/allure/#</a>
 ![Allure](img/jenkins.png)
 ![Allure](img/allure-report.png)
 

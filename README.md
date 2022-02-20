@@ -19,7 +19,7 @@
 
 # Джоба в Jenkins 
 с параметрами:
-<a target="_blank" href="jenkins.autotests.cloud">jenkins.autotests.cloud/job/</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom/">jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom//job/</a>
 
 ## Запуск через Jenkins с параметрами:
 
@@ -39,7 +39,7 @@ ___
 ## После прохождения тестов приходит оповещение в Telegram через бот 
 
 #### После прохождения всех тестов, приходит отчет в канал в телеграме:
-![Telegram](img/Telegram.png)
+![Telegram](img/telegram.png)
 
 ---
 ## Анализ результатов
@@ -49,8 +49,9 @@ ___
 
 Allure report (пример):
 <a target="_blank" href="https://jenkins.autotests.cloud/job/">https://jenkins.autotests.cloud/job/</a>
-![Allure](img/Allure_jenkins.png)
-![Allure](img/Allure.png)
+![Allure](img/jenkins.png)
+![Allure](img/allure-report.png)
 
 ---
 ### Пример видео прохождения теста, прикрепляется к Allure отчету после каждого прохождения теста
+![video](./img/allure-test-utorg.gif)

@@ -1,5 +1,5 @@
 # Автотесты для сайта <a target="_blank" href="https://utorg.pro/">UTORGPRO</a>
-![Intelij_IDEA](img/icons/ПочтаРоссии.png)
+![Intelij_IDEA](img/icons/utorg.png)
 
 ## Реализованы следующие проверки:
  - На главной странице есть кнопка Buy BTN

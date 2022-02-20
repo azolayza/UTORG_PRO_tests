@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class UtorgMainPageTests extends TestBase {
 
-    UtorgMainPageTests utorgMainPageTests = new UtorgMainPageTests();
+    //UtorgMainPageTests utorgMainPageTests = new UtorgMainPageTests();
     String invalidValue="email.ru";
     String invalidBankCard = "1234567890";
     String correctValidEmail = "utorgme@mailforspam.com";

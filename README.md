@@ -2,13 +2,11 @@
 ![Intelij_IDEA](img/icons/utorg.png)
 
 ## Реализованы следующие проверки:
- - На главной странице есть кнопка Buy BTN
+ - На главной странице есть кнопка Buy BTC
  - На главной странице после ввода невалидного номера карты возвращается ошибка
  - На главной странице заголовок "UTORG"
  - НА главной странице есть блок FAQ
  - При загрузке главной страницы в веб консоли нет ошибок
- - На главной странице кнопка SignIn перенаправляет на страницу авторизации
- - На главной странице кнопка SignUp перенаправляет на страницу авторизации
  - На странице авторизации при вводе невалидного емаил возвращается ошибка
  - На странице авторизации при вводе валидного емаил предлагается ввести Authorization code
 
@@ -19,7 +17,7 @@
 
 # Джоба в Jenkins 
 с параметрами:
-<a target="_blank" href="jenkins.autotests.cloud">jenkins.autotests.cloud/job/</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom/">jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom//job/</a>
 
 ## Запуск через Jenkins с параметрами:
 
@@ -39,18 +37,19 @@ ___
 ## После прохождения тестов приходит оповещение в Telegram через бот 
 
 #### После прохождения всех тестов, приходит отчет в канал в телеграме:
-![Telegram](img/Telegram.png)
+![Telegram](img/telegram.png)
 
 ---
 ## Анализ результатов
-Ссылку на отчет Allure можно найти в 
+Ссылку на отчет Allure можно найти в
 * Сообщении Telegram
 * В последней сборке Jenkins
 
 Allure report (пример):
-<a target="_blank" href="https://jenkins.autotests.cloud/job/">https://jenkins.autotests.cloud/job/</a>
-![Allure](img/Allure_jenkins.png)
-![Allure](img/Allure.png)
+<a target="_blank" href="https://jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom/4/allure">https://jenkins.autotests.cloud/job/010-Azovtseva-hw13-utorgcom/4/allure#</a>
+![Allure](img/jenkins.png)
+![Allure](img/allure-report.png)
 
 ---
 ### Пример видео прохождения теста, прикрепляется к Allure отчету после каждого прохождения теста
+![video](./img/allure-test-utorg.gif)

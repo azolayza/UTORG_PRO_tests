@@ -1,29 +1,28 @@
 package azovceva.autotests.tests;
 
 import azovceva.autotests.helpers.DriverUtils;
-import com.codeborne.selenide.Condition;
+import azovceva.autotests.pages.MainPage;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class UtorgMainPageTests extends TestBase {
+public class MainPageTests extends TestBase {
 
+    MainPage mainPage = new MainPage();
     @Test
-    @Description("Test check Main Page have BuyBTN button)")
-    @DisplayName("BuyBtcButton should be in MainPage")
-    void buyBtnButtonCheckTest() {
+    @Description("Test check Main Page have BuyBTC Widget)")
+    @DisplayName("BuyBtcWidget should be in MainPage")
+    void buyBtcButtonCheckTest() {
         step("Open https://utorg.pro/", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
         });
-
-        step("Check Button BuyBTN on the main page", () -> {
-            $(".utorgWidget_button").shouldBe(Condition.visible);
+        step("Check Widget BuyBTC on the main page", () -> {
+            mainPage.widgetBtcShouldVisible();
         });
     }
 
@@ -32,11 +31,10 @@ public class UtorgMainPageTests extends TestBase {
     @DisplayName("MainPage have FAQ")
     void faqOnMainPageTest() {
         step("Open https://utorg.pro/", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
         });
-
-        step("Check Button BuyBTN on the main page", () -> {
-            $(byId("faq")).shouldHave(Condition.text("Frequently asked questions"));
+        step("Check FAQ on the main page", () -> {
+            mainPage.faqShouldOnPage();
         });
     }
 
@@ -45,12 +43,11 @@ public class UtorgMainPageTests extends TestBase {
     @DisplayName("MainPage have Step-by-step guide")
     void blogsOnMainPageTest() {
         step("Open https://utorg.pro/", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
         });
         step("Check subtitle Step-by-Step guide", () -> {
-            $(byId("guide")).shouldHave(Condition.text("Step-by-Step guide"));
+            mainPage.guideShouldOnPage();
         });
-        //guide
     }
 
 
@@ -59,14 +56,13 @@ public class UtorgMainPageTests extends TestBase {
     @DisplayName("Error message for Invalid bank card")
     void invalidCarErrorIdMessageTest() {
         step("Open https://utorg.pro/", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
         });
         step("Enter invalid card number in card field", () -> {
-            $(".uw-address").setValue("1234567890");
+            mainPage.cardNumberEnter("1234567890");
         });
         step("Check Error message for card number", () -> {
-            $(".uw-input-error").shouldHave(Condition.text(
-                    "Invalid wallet address"));
+            mainPage.checkErrorMessageNumberCard();
         });
     }
 
@@ -75,21 +71,19 @@ public class UtorgMainPageTests extends TestBase {
     @DisplayName("SignIn with invalid email return Error")
     void errorEmailSignInTest() {
         step("Open https://utorg.pro/", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
         });
-
         step("Click SignIn button on main page", () -> {
-            $(".variant-link").click();
+            mainPage.clickSignIn();
         });
-        step("Enter invalid email in email field", () -> {
-            $(".MuiInputBase-inputAdornedEnd").setValue("email.ru");
+        step("Type invalid email in email field", () -> {
+            mainPage.typeEmail("email.ru");
         });
         step("Click on Proceed button for enter email", () -> {
-            $(".MuiButton-label").click();
+            mainPage.proceedEmail();
         });
         step("Check Error message", () -> {
-            $(".MuiFormHelperText-contained").shouldHave(Condition.text(
-                    "Incorrect email, accepted symbols: characters, digits, points, hyphens"));
+            mainPage.checkErrorAboutInvalidEmail();
         });
     }
 
@@ -98,20 +92,19 @@ public class UtorgMainPageTests extends TestBase {
     @DisplayName("SignIn with correct email return Authorization code message")
     void authorizationCodeSignInTest() {
         step("Open https://utorg.pro/", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
         });
         step("Click SignIn button on main page", () -> {
-            $(".variant-link").click();
+            mainPage.clickSignIn();
         });
         step("Enter correct email on email field", () -> {
-            $(".MuiInputBase-inputAdornedEnd").setValue("utorgme@mailforspam.com");
+            mainPage.typeEmail("utorgme@mailforspam.com");
         });
         step("Click on Proceed button for enter email", () -> {
-            $(".MuiInputBase-inputAdornedEnd").pressEnter();
+            mainPage.proceedEmail();
         });
         step("Check Authorization code message", () -> {
-            $(".MuiTypography-h4").shouldHave(Condition.text(
-                    "Authorization code"));
+            mainPage.checkAuthorizationCodeMessage();
         });
     }
 
@@ -120,13 +113,11 @@ public class UtorgMainPageTests extends TestBase {
     @DisplayName("Page title should have header text")
     void titleTest() {
         step("Open url 'https://utorg.pro/'", () -> {
-            open("https://utorg.pro/");
+            mainPage.openPage();
     });
-
         step("Page title should have text 'Buy Bitcoin with Credit Card or Debit Card | UTORG'", () -> {
             String expectedTitle = "Buy Bitcoin with Credit Card or Debit Card | UTORG";
             String actualTitle = title();
-
             assertThat(actualTitle).isEqualTo(expectedTitle);
         });
     }
@@ -135,13 +126,12 @@ public class UtorgMainPageTests extends TestBase {
     @Description("Test check log")
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
-        step("Open url 'https://utorg.pro/'", () ->
-            open("https://utorg.pro/"));
-
+        step("Open url 'https://utorg.pro/'", () ->{
+                mainPage.openPage();
+        });
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
             String errorText = "SEVERE";
-
             assertThat(consoleLogs).doesNotContain(errorText);
         });
     }

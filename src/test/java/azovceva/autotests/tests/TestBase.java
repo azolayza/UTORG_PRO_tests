@@ -4,6 +4,7 @@ import  azovceva.autotests.config.Project;
 import  azovceva.autotests.helpers.AllureAttachments;
 import  azovceva.autotests.helpers.DriverSettings;
 import  azovceva.autotests.helpers.DriverUtils;
+import azovceva.autotests.pages.MainPage;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.junit5.AllureJunit5;
@@ -15,6 +16,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
+
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
